@@ -37,7 +37,7 @@ func main() {
 	// Check for environment variables and error if one is missing.
 	err := checkEnvironmentVariables()
 	if err != nil {
-		log.Fatalf("%v", err)
+		log.Printf("%v", err)
 	}
 
 	// Defining secret ID to retrieve, as per 12 factor
