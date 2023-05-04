@@ -23,6 +23,7 @@ data:
   CONJUR_APPLIANCE_URL: https://conjur-follower.conjur.svc.cluster.local
   CONJUR_AUTHN_JWT_SERVICE_ID: {{ Service_ID }}
   CONJUR_SECRET_ID: {{ Secret Path }}
+  CONJUR_AUTHN_LOGIN: {{ Host ID }}
   CONJUR_SSL_CERTIFICATE: |
     -----BEGIN CERTIFICATE-----
     MIIDwjCCAqqgAwIBAgIUCIeb2X6ozC0yhwcjLkEBCnqxR3EwDQYJKoZIhvcNAQEL

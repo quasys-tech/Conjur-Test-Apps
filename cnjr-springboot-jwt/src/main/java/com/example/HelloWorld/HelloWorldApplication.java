@@ -51,11 +51,12 @@ public class HelloWorldApplication {
 	public static  String getTokenWC() throws CertificateException, KeyStoreException, IOException, NoSuchAlgorithmException {
 		String serviceID = System.getenv("CONJUR_AUTHN_JWT_SERVICE_ID");
 		String conjurAccount = System.getenv("CONJUR_ACCOUNT");
+		String authLogin = System.getenv("CONJUR_AUTHN_LOGIN");
 		Path filePath = Path.of("/var/run/secrets/kubernetes.io/serviceaccount/token");
 		String tokenContent = Files.readString(filePath);
 
 		WebClient client = webClient();
-		String token = client.post().uri("/authn-jwt/" + serviceID +"/"+ conjurAccount +"/authenticate")
+		String token = client.post().uri("/authn-jwt/" + serviceID +"/"+ conjurAccount +"/" + authLogin + "/authenticate")
 				.header("Content-Type", "application/x-www-form-urlencoded")
 				.header("Accept-Encoding", "base64")
 				.bodyValue("jwt=" + tokenContent)
@@ -100,6 +101,7 @@ public class HelloWorldApplication {
 		String baseURL = System.getenv("CONJUR_APPLIANCE_URL");
 		String conjurAccount = System.getenv("CONJUR_ACCOUNT");
 		String secretPath = System.getenv("CONJUR_SECRET_ID");
+		String authLogin = System.getenv("CONJUR_AUTHN_LOGIN");
 		String serviceID = System.getenv("CONJUR_AUTHN_JWT_SERVICE_ID");
 		Path filePath = Path.of("/var/run/secrets/kubernetes.io/serviceaccount/token");
 		String tokenContent = Files.readString(filePath);
@@ -118,7 +120,7 @@ public class HelloWorldApplication {
 		HttpClient client = HttpClient.newBuilder().sslContext(sslContext).build();
 
 		HttpRequest request = HttpRequest.newBuilder()
-				.uri(URI.create(baseURL + "/authn-jwt/" + serviceID +"/"+ conjurAccount +"/authenticate"))
+				.uri(URI.create(baseURL + "/authn-jwt/" + serviceID +"/"+ conjurAccount +"/" + authLogin + "/authenticate"))
 				.header("Content-Type", "application/x-www-form-urlencoded")
 				.header("Accept-Encoding", "base64")
 				.POST(HttpRequest.BodyPublishers.ofString("jwt=" + tokenContent))
