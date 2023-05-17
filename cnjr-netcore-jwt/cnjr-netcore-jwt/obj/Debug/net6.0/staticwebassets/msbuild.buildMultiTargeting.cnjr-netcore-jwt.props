@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\cnjr-netcore-jwt.props" />
+</Project>

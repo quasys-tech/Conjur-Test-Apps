@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ETJfqymotM8y/mBNZjGWUs/hvTobvg74RMV8BoQvbcM=",
+  "Source": "cnjr-netcore-jwt",
+  "BasePath": "_content/cnjr-netcore-jwt",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
