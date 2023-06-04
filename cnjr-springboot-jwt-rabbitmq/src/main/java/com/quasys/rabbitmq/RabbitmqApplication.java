@@ -47,14 +47,14 @@ public class RabbitmqApplication {
   SimpleMessageListenerContainer container(CachingConnectionFactory connectionFactory,
       MessageListenerAdapter listenerAdapter) {
     SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-	
-    connectionFactory.setUsername(queueUsername);
-    connectionFactory.setPassword(queuePassword);
-    connectionFactory.setHost(queueHost);
-    connectionFactory.setPort(queuePort);
-    connectionFactory.setVirtualHost(queueName);
-    connectionFactory.createConnection();
-    container.setConnectionFactory(connectionFactory);
+    final CachingConnectionFactory connectionFactory2 = new CachingConnectionFactory();
+    connectionFactory2.setUsername(queueUsername);
+    connectionFactory2.setPassword(queuePassword);
+    connectionFactory2.setHost(queueHost);
+    connectionFactory2.setPort(queuePort);
+    connectionFactory2.setVirtualHost(queueName);
+    connectionFactory2.createConnection();
+    container.setConnectionFactory(connectionFactory2);
     container.setQueueNames(queueName);
     container.setMessageListener(listenerAdapter);
     return container;
