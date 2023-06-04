@@ -53,6 +53,7 @@ public class RabbitmqApplication {
     connectionFactory.setHost(queueHost);
     connectionFactory.setPort(queuePort);
     connectionFactory.setVirtualHost(queueName);
+    connectionFactory.createConnection();
     container.setConnectionFactory(connectionFactory);
     container.setQueueNames(queueName);
     container.setMessageListener(listenerAdapter);
