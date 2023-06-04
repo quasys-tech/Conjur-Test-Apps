@@ -1,4 +1,4 @@
-package com.quasys.rabbitmq;
+package com.quasys;
 
 import java.util.concurrent.CountDownLatch;
 import org.springframework.stereotype.Component;
