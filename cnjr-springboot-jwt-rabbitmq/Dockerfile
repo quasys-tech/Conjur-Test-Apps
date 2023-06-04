@@ -4,4 +4,4 @@ WORKDIR /app
 COPY target/rabbitmq-0.0.1-SNAPSHOT.jar build/
 
 WORKDIR /app/build
-ENTRYPOINT java -jar app.jar
+ENTRYPOINT java -jar rabbitmq-0.0.1-SNAPSHOT.jar
