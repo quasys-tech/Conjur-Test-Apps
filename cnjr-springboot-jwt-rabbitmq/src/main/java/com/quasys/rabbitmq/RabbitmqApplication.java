@@ -22,11 +22,6 @@ public class RabbitmqApplication {
   static final String queueUsername = "guest";
   static final String queuePassword = "guest";
 
-  public static final String BROKER_HOSTNAME = "RABBITMQ_TEST_HOSTNAME";
-  public static final String BROKER_PORT = "RABBITMQ_TEST_PORT";
-  public static final String BROKER_USER = "RABBITMQ_TEST_USER";
-  public static final String BROKER_PW = "RABBITMQ_TEST_PASSWORD";
-  public static final String DEFAULT_QUEUE_NAME = "RABBITMQ_TEST_ADMIN_USER";
 
   @Bean
   Queue queue() {
