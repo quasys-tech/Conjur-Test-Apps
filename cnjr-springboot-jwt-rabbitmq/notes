@@ -1,0 +1,29 @@
+
+Change  /etc/hosts
+
+yum update -y
+systemctl stop firewalld
+systemctl stop iptables
+systemctl disable firewalld
+systemctl disable iptables
+setenforce 0 && sed -i 's/^SELINUX=permissive$/SELINUX=disabled/' /etc/selinux/config
+setenforce 0 && sed -i 's/^SELINUX=enforcing$/SELINUX=disabled/' /etc/selinux/config
+
+rabbitmqadmin -H 127.0.0.1 list vhosts
+rabbitmqctl add_vhost spring-boot
+rabbitmqctl add_user "admin"
+rabbitmqctl set_user_tags admin administrator
+echo '2a55f70a841f18b97c3a7db939b7adc9e34a0f1b' | rabbitmqctl add_user 'username'
+rabbitmqctl set_permissions -p "spring-boot" "admin" ".*" ".*" ".*"
+rabbitmqadmin -H 127.0.0.1 declare exchange --vhost=spring-boot name=spring-boot type=direct -u admin -p "password"
+rabbitmqadmin declare queue --vhost=spring-boot name=spring-boot durable=true  -u admin -p "password"
+rabbitmqadmin --vhost="spring-boot" declare binding source="spring-boot" destination_type="queue" destination="spring-boot" routing_key="foo.bar.baz" -u admin -p "password"
+
+rabbitmqctl change_password username newpassword
+
+	
+curl -u userename:pa$sw0rD -X PUT http://rabbitmq.local:15672/api/vhosts/vh1
+https://rawcdn.githack.com/rabbitmq/rabbitmq-server/v3.8.16/deps/rabbitmq_management/priv/www/api/index.html
+
+
+rabbitmqadmin -u admin -p "password" publish exchange="spring" routing_key="" payload="hello world"
