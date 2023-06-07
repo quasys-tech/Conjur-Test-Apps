@@ -10,9 +10,10 @@ import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.Channel;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+//import com.rabbitmq.client.ConnectionFactory;
+//import com.rabbitmq.client.Connection;
+//import com.rabbitmq.client.Channel;
 
 import java.io.IOException;
 import java.time.Clock;
@@ -45,23 +46,31 @@ public class RabbitmqApplication {
     return BindingBuilder.bind(queue).to(exchange).with("foo.bar.#");
   }
 
+//  @Bean
+//  SimpleMessageListenerContainer container(CachingConnectionFactory connectionFactory,
+//      MessageListenerAdapter listenerAdapter) {
+//    SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
+//    final CachingConnectionFactory connectionFactory2 = new CachingConnectionFactory();
+//    connectionFactory2.setUsername(queueUsername);
+//    connectionFactory2.setPassword(queuePassword);
+//    connectionFactory2.setHost(queueHost);
+//    connectionFactory2.setPort(queuePort);
+//    connectionFactory2.setVirtualHost(queueName);
+//    connectionFactory2.createConnection();
+//    container.setConnectionFactory(connectionFactory2);
+//    container.setQueueNames(queueName);
+//    container.setMessageListener(listenerAdapter);
+//    return container;
+//  }
   @Bean
-  SimpleMessageListenerContainer container(CachingConnectionFactory connectionFactory,
-      MessageListenerAdapter listenerAdapter) {
+  SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
+                                           MessageListenerAdapter listenerAdapter) {
     SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-    final CachingConnectionFactory connectionFactory2 = new CachingConnectionFactory();
-    connectionFactory2.setUsername(queueUsername);
-    connectionFactory2.setPassword(queuePassword);
-    connectionFactory2.setHost(queueHost);
-    connectionFactory2.setPort(queuePort);
-    connectionFactory2.setVirtualHost(queueName);
-    connectionFactory2.createConnection();
-    container.setConnectionFactory(connectionFactory2);
+    container.setConnectionFactory(connectionFactory);
     container.setQueueNames(queueName);
     container.setMessageListener(listenerAdapter);
     return container;
   }
-
   @Bean
   MessageListenerAdapter listenerAdapter(Receiver receiver) {
     return new MessageListenerAdapter(receiver, "receiveMessage");
@@ -69,16 +78,20 @@ public class RabbitmqApplication {
 
   public static void main(String[] args) throws InterruptedException, IOException, TimeoutException {
     System.out.println("Hola1");
-    ConnectionFactory factory = new ConnectionFactory();
-    factory.setHost(queueHost);
-
-    try (Connection connection = factory.newConnection();
-         Channel channel = connection.createChannel()) {
-      channel.queueDeclare("spring-boot", false, false, false, null);
-      String message = "Hello World! Abdulmelik";
-      channel.basicPublish("", "spring-boot", null, message.getBytes());
-      System.out.println(" [x] Sent '" + message + "'");
-    }
+//    ConnectionFactory factory = new ConnectionFactory();
+//    factory.setHost(queueHost);
+//    factory.setVirtualHost("spring-boot");
+//    factory.setUsername(queueUsername);
+//    factory.setPassword(queuePassword);
+//    factory.setPort(queuePort);
+//    try (Connection connection = factory.newConnection();
+//         Channel channel = connection.createChannel()) {
+//      channel.
+//      channel.queueDeclare("spring-boot", false, false, false, null);
+//      String message = "Hello World! Abdulmelik";
+//      channel.basicPublish("", "spring-boot", null, message.getBytes());
+//      System.out.println(" [x] Sent '" + message + "'");
+//    }
 
 
     SpringApplication.run(RabbitmqApplication.class, args).close();
