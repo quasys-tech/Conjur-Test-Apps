@@ -45,23 +45,6 @@ public class RabbitmqApplication {
   Binding binding(Queue queue, TopicExchange exchange) {
     return BindingBuilder.bind(queue).to(exchange).with("foo.bar.#");
   }
-
-//  @Bean
-//  SimpleMessageListenerContainer container(CachingConnectionFactory connectionFactory,
-//      MessageListenerAdapter listenerAdapter) {
-//    SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-//    final CachingConnectionFactory connectionFactory2 = new CachingConnectionFactory();
-//    connectionFactory2.setUsername(queueUsername);
-//    connectionFactory2.setPassword(queuePassword);
-//    connectionFactory2.setHost(queueHost);
-//    connectionFactory2.setPort(queuePort);
-//    connectionFactory2.setVirtualHost(queueName);
-//    connectionFactory2.createConnection();
-//    container.setConnectionFactory(connectionFactory2);
-//    container.setQueueNames(queueName);
-//    container.setMessageListener(listenerAdapter);
-//    return container;
-//  }
   @Bean
   SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
                                            MessageListenerAdapter listenerAdapter) {
@@ -77,25 +60,7 @@ public class RabbitmqApplication {
   }
 
   public static void main(String[] args) throws InterruptedException, IOException, TimeoutException {
-    System.out.println("Hola1");
-//    ConnectionFactory factory = new ConnectionFactory();
-//    factory.setHost(queueHost);
-//    factory.setVirtualHost("spring-boot");
-//    factory.setUsername(queueUsername);
-//    factory.setPassword(queuePassword);
-//    factory.setPort(queuePort);
-//    try (Connection connection = factory.newConnection();
-//         Channel channel = connection.createChannel()) {
-//      channel.
-//      channel.queueDeclare("spring-boot", false, false, false, null);
-//      String message = "Hello World! Abdulmelik";
-//      channel.basicPublish("", "spring-boot", null, message.getBytes());
-//      System.out.println(" [x] Sent '" + message + "'");
-//    }
-
-
     SpringApplication.run(RabbitmqApplication.class, args).close();
-    System.out.println("Hola2");
   }
 
 }
