@@ -33,12 +33,12 @@ public class RabbitmqApplication {
 
   @Bean
   Queue queue() {
-    return new Queue(queueName, false);
+    return new Queue("spring-boot", false);
   }
 
   @Bean
   TopicExchange exchange() {
-    return new TopicExchange(topicExchangeName);
+    return new TopicExchange("spring-boot-exchange");
   }
 
   @Bean
@@ -67,7 +67,7 @@ public class RabbitmqApplication {
                                            MessageListenerAdapter listenerAdapter) {
     SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
     container.setConnectionFactory(connectionFactory);
-    container.setQueueNames(queueName);
+    container.setQueueNames("spring-boot");
     container.setMessageListener(listenerAdapter);
     return container;
   }
