@@ -33,7 +33,7 @@ public class RabbitmqApplication {
 
   @Bean
   Queue queue() {
-    return new Queue("spring-boot", false);
+    return new Queue("springhost", false);
   }
 
   @Bean
@@ -67,7 +67,7 @@ public class RabbitmqApplication {
                                            MessageListenerAdapter listenerAdapter) {
     SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
     container.setConnectionFactory(connectionFactory);
-    container.setQueueNames("spring-boot");
+    container.setQueueNames("springhost");
     container.setMessageListener(listenerAdapter);
     return container;
   }
