@@ -17,14 +17,11 @@ public class Runner implements CommandLineRunner {
     this.rabbitTemplate = rabbitTemplate;
   }
 
-  @Override
-  public void run(String... args) throws Exception {
-    System.out.println("Sending message...");
-    System.out.println("Hola10");
-    rabbitTemplate.convertAndSend(RabbitmqApplication.topicExchangeName, "foo.bar.baz", "Hello from RabbitMQ!");
-    System.out.println("Hola11");
-    receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
-    System.out.println("Hola12");
-  }
+//  @Override
+//  public void run(String... args) throws Exception {
+//    System.out.println("Sending message...");
+//    rabbitTemplate.convertAndSend(RabbitmqApplication.topicExchangeName, "foo.bar.baz", "Hello from RabbitMQ!");
+//    receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
+//  }
 
 }
