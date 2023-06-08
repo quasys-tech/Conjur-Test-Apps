@@ -58,7 +58,7 @@ public class RabbitmqApplication {
   SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
                                            MessageListenerAdapter listenerAdapter) {
     SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-//    container.setConnectionFactory(connectionFactory);
+    container.setConnectionFactory(fooConn());
     container.setQueueNames("springhost");
     container.setMessageListener(listenerAdapter);
     return container;

@@ -15,18 +15,9 @@ public class Runner implements CommandLineRunner {
   private final RabbitTemplate rabbitTemplate;
   private final Receiver receiver;
 
-  @Bean
-  ConnectionFactory fooConn() {
-    CachingConnectionFactory ccf = new CachingConnectionFactory("rabbitmqcluster-quasys.rabbitmq-system.svc.cluster.local", 5672);
-    ccf.setVirtualHost("springhost");
-    ccf.setPassword("Hey1234");
-    ccf.setUsername("abdulmelik");
-    return ccf;
-  }
   public Runner(Receiver receiver, RabbitTemplate rabbitTemplate) {
     this.receiver = receiver;
     this.rabbitTemplate = rabbitTemplate;
-    this.rabbitTemplate.setConnectionFactory(fooConn());
 
   }
 
