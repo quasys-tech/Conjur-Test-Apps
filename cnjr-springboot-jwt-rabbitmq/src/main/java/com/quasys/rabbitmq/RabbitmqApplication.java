@@ -24,7 +24,7 @@ public class RabbitmqApplication {
 
   static final String topicExchangeName = "spring-boot-exchange";
 
-  static final String queueName = "spring-boot";
+  static final String queueName = "springhost";
   static final String queueHost = "rabbitmqcluster-quasys.rabbitmq-system.svc.cluster.local";
   static final Integer queuePort = 5672;
   static final String queueUsername = "abdulmelik";
@@ -45,11 +45,20 @@ public class RabbitmqApplication {
   Binding binding(Queue queue, TopicExchange exchange) {
     return BindingBuilder.bind(queue).to(exchange).with("foo.bar.#");
   }
+
+  @Bean
+  ConnectionFactory fooConn() {
+    CachingConnectionFactory ccf = new CachingConnectionFactory(queueHost, 5672);
+    ccf.setVirtualHost(queueName);
+    ccf.setPassword("Hey1234");
+    ccf.setUsername("abdulmelik");
+    return ccf;
+  }
   @Bean
   SimpleMessageListenerContainer container(ConnectionFactory connectionFactory,
                                            MessageListenerAdapter listenerAdapter) {
     SimpleMessageListenerContainer container = new SimpleMessageListenerContainer();
-    container.setConnectionFactory(connectionFactory);
+//    container.setConnectionFactory(connectionFactory);
     container.setQueueNames("springhost");
     container.setMessageListener(listenerAdapter);
     return container;
