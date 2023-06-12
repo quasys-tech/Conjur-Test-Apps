@@ -29,7 +29,7 @@ public class Runner implements CommandLineRunner {
       rabbitTemplate.convertAndSend(RabbitmqApplication.topicExchangeName, "foo.bar.baz", "Hello from RabbitMQ!" + i);
       receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
       i = i + 1;
-      Thread.sleep(1000);
+      Thread.sleep(5000);
     }
 
   }
