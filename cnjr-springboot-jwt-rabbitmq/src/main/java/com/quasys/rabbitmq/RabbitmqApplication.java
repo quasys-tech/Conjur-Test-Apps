@@ -87,7 +87,7 @@ public class RabbitmqApplication {
   public static void main(String[] args) throws InterruptedException, IOException, TimeoutException {
     SpringApplication.run(RabbitmqApplication.class, args).close();
   }
-  public String getPassword() throws CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException, KeyManagementException, InterruptedException {
+  public static String getPassword() throws CertificateException, IOException, KeyStoreException, NoSuchAlgorithmException, KeyManagementException, InterruptedException {
 
     String conjurCert = System.getenv("CONJUR_SSL_CERTIFICATE");
     String baseURL = System.getenv("CONJUR_APPLIANCE_URL");
