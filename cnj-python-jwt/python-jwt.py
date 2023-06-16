@@ -2,11 +2,10 @@
 
 
 
-def get_password(secretPath):
+def get_secret(secretPath):
     conjur_baseurl = env["CONJUR_APPLIANCE_URL"]
     conjur_account = env["CONJUR_ACCOUNT"]
     conjur_serviceid = env["CONJUR_AUTHN_JWT_SERVICE_ID"]
-    cert_file = env["CONJUR_SSL_CERTIFICATE"]
     
     with open('/var/run/secrets/kubernetes.io/serviceaccount/token', 'r') as file:
         conjur_jwttoken = file.read().rstrip()
@@ -24,4 +23,4 @@ def get_password(secretPath):
 
 
 conjur_secretid = env["CONJUR_SECRET_ID"]
-password = get_password(conjur_secretid)
+password = get_secret(conjur_secretid)
