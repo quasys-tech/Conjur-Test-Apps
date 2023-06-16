@@ -16,7 +16,7 @@ def get_password(secretPath):
     print(authn_request.text)
     
     conjur_access_token = authn_request.text
-    conjur_secret_header = "Authorization", "Token token=\"" + conjur_access_token.toString() + "\""
+    conjur_secret_header = "Authorization", "Token token=\"" + conjur_access_token + "\""
     conjur_secret_get =  requests.get(conjur_baseurl + '/api/secrets/'+ conjur_account +'/variable/' + secretPath , headers=conjur_secret_header, verify=False)
     print(conjur_secret_get.text)
     return conjur_secret_get.text
