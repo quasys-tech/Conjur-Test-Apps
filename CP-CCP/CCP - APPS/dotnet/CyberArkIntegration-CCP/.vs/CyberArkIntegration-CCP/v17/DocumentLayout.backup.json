@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vagrant\\source\\repos\\CyberArkIntegration-CCP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A7F6FE58-F5DC-406D-B4E1-42DADBA7BCDF}|CyberArkIntegration-CCP\\CyberArkIntegration-CCP.csproj|c:\\users\\vagrant\\source\\repos\\cyberarkintegration-ccp\\cyberarkintegration-ccp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7F6FE58-F5DC-406D-B4E1-42DADBA7BCDF}|CyberArkIntegration-CCP\\CyberArkIntegration-CCP.csproj|solutionrelative:cyberarkintegration-ccp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vagrant\\source\\repos\\CyberArkIntegration-CCP\\CyberArkIntegration-CCP\\Program.cs",
+              "RelativeDocumentMoniker": "CyberArkIntegration-CCP\\Program.cs",
+              "ToolTip": "C:\\Users\\vagrant\\source\\repos\\CyberArkIntegration-CCP\\CyberArkIntegration-CCP\\Program.cs",
+              "RelativeToolTip": "CyberArkIntegration-CCP\\Program.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T18:53:45.961Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

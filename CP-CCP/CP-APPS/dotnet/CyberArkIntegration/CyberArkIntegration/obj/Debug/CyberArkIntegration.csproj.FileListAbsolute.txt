@@ -1,0 +1,9 @@
+C:\Users\vagrant\source\repos\CyberArkIntegration\CyberArkIntegration\bin\Debug\CyberArkIntegration.exe.config
+C:\Users\vagrant\source\repos\CyberArkIntegration\CyberArkIntegration\bin\Debug\CyberArkIntegration.exe
+C:\Users\vagrant\source\repos\CyberArkIntegration\CyberArkIntegration\bin\Debug\CyberArkIntegration.pdb
+C:\Users\vagrant\source\repos\CyberArkIntegration\CyberArkIntegration\obj\Debug\CyberArkIntegration.csproj.AssemblyReference.cache
+C:\Users\vagrant\source\repos\CyberArkIntegration\CyberArkIntegration\obj\Debug\CyberArkIntegration.csproj.CoreCompileInputs.cache
+C:\Users\vagrant\source\repos\CyberArkIntegration\CyberArkIntegration\obj\Debug\CyberArkIntegration.exe
+C:\Users\vagrant\source\repos\CyberArkIntegration\CyberArkIntegration\obj\Debug\CyberArkIntegration.pdb
+C:\Users\vagrant\source\repos\CyberArkIntegration\CyberArkIntegration\bin\Debug\NetPasswordSDK.dll
+C:\Users\vagrant\source\repos\CyberArkIntegration\CyberArkIntegration\obj\Debug\CyberArk.D10CB6D8.Up2Date

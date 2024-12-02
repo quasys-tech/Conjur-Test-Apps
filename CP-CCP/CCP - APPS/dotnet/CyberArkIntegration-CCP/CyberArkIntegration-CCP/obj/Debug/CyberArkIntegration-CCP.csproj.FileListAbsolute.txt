@@ -1,0 +1,7 @@
+C:\Users\vagrant\source\repos\CyberArkIntegration-CCP\CyberArkIntegration-CCP\bin\Debug\CyberArkIntegration-CCP.exe.config
+C:\Users\vagrant\source\repos\CyberArkIntegration-CCP\CyberArkIntegration-CCP\bin\Debug\CyberArkIntegration-CCP.exe
+C:\Users\vagrant\source\repos\CyberArkIntegration-CCP\CyberArkIntegration-CCP\bin\Debug\CyberArkIntegration-CCP.pdb
+C:\Users\vagrant\source\repos\CyberArkIntegration-CCP\CyberArkIntegration-CCP\obj\Debug\CyberArkIntegration-CCP.csproj.AssemblyReference.cache
+C:\Users\vagrant\source\repos\CyberArkIntegration-CCP\CyberArkIntegration-CCP\obj\Debug\CyberArkIntegration-CCP.csproj.CoreCompileInputs.cache
+C:\Users\vagrant\source\repos\CyberArkIntegration-CCP\CyberArkIntegration-CCP\obj\Debug\CyberArkIntegration-CCP.exe
+C:\Users\vagrant\source\repos\CyberArkIntegration-CCP\CyberArkIntegration-CCP\obj\Debug\CyberArkIntegration-CCP.pdb
